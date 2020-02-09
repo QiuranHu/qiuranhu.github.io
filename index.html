@@ -1,48 +1,40 @@
 <html lang="en">
 
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Angular Material style sheet -->
-    <link rel="stylesheet"
-        href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <link rel="styleSheet" type="text/css" href="node_modules/angular-material/angular-material.min.css">
 </head>
 
-<body ng-app="BlankApp" ng-cloak>
-    <!--
-    Your HTML content here
-  -->
-
-    <!-- Angular Material requires Angular.js Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
-
-    <!-- Angular Material Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+<body ng-app="BlankApp" ng-controller="myController" >
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-messages/angular-messages.min.js"></script>
     <script type="text/javascript">
         /**
          * You must include the dependency on 'ngMaterial' 
          */
         var myModule = angular.module('BlankApp', ['ngMaterial', 'ngMessages']);
-        myModule.controller("myController", function ($scope) {
+        myModule.controller("myController", function($scope){
             $scope.show = false;
-            $scope.switchShow = function () {
+            $scope.switchShow = function() {
                 $scope.show = !$scope.show
             }
         })
     </script>
-
+    
     <md-toolbar md-scroll-shrink="true" layout-padding class="md-toolbar-tools-bottom">
         <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" ng-click="switchShow()">
+            <md-button class="md-icon-button"  ng-click="switchShow()">
                 <md-icon md-svg-src="img/menu-24px.svg"></md-icon>
             </md-button>
             <h2>Page Title</h2>
             <span flex></span>
             <md-button>An action</md-button>
         </div>
-
+        
     </md-toolbar>
     <md-sidenav ng-model="show" md-is-open="show" class="md-sidenav-left">
         <!-- toolbar specific markup goes here-->
@@ -51,8 +43,8 @@
         </md-toolbar>
     </md-sidenav>
     <md-content layout-padding flex>
-        <md-tabs md-selected="1" md-stretch-tabs="always" md-align-tabs="top" md-dynamic-heght md-border-bottom
-            md-swipt-content>
+        <md-tabs md-selected="1"  md-stretch-tabs="always" md-align-tabs="top" md-dynamic-heght md-border-bottom
+        md-swipt-content> 
             <md-tab>
                 <md-tab-label>
                     <md-icon md-svg-src="img/chat-24px.svg"></md-icon>
